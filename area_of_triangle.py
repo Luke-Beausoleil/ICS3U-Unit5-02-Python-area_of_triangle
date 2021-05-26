@@ -9,17 +9,12 @@ def calculate_area(base, height):
     # calculate area
 
     # process & output
-    if base <= 0 or height <= 0:
-        print("\nInvalid Input. Try Again.")
-        print("Done.")
-    else:
-        area = 0.5 * base * height
-        print("\nThe area is {0} units²".format(area))
-        print("Done.")
+    area = 0.5 * base * height
+    print("\nThe area is {0} units²\nDone.".format(area))
 
 
 def main():
-    # this function calls another function
+    # this function receives input and calls another function
 
     # input
     base_input = input("Enter the dimension of the base: ")
@@ -27,10 +22,12 @@ def main():
     try:
         base = float(base_input)
         height = float(height_input)
-        calculate_area(base, height)  # call function
+        if base <= 0 or height <= 0:
+            print("\nInvalid Input. Try Again.\nDone.")
+        else:
+            calculate_area(base, height)  # call function
     except(Exception):
-        print("\nInvalid Input. Try Again")
-        print("Done.")
+        print("\nInvalid Input. Try Again\nDone.")
 
 
 if __name__ == "__main__":
